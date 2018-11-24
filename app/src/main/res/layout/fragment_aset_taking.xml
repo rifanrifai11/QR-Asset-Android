@@ -1,0 +1,363 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cordinatorLayout"
+    android:background="#f0f0f0"
+    tools:context="com.app.britech.riung.fragment.AsetTakingFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:elevation="2dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/border_color_white__style_low"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Kondisi saat ini"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="@drawable/border_color_blue_transparan_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <Spinner
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Baik"
+                        android:layout_marginLeft="16dp"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:entries="@array/status"
+                        android:textColor="#1a1a1a"/>
+
+                    <Button
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:background="@drawable/border_color_blue_right_hight"
+                        android:text="Simpan"
+                        android:textColor="#FFF"
+                        android:textAllCaps="false"
+                        android:textSize="14sp"
+                        android:paddingLeft="36dp"
+                        android:paddingRight="36dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:background="@drawable/border_color_white__style_low"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/r_kode_box"/>
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Kode Barang"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="16dp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#1a1a1a"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e6e6e6"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/r_name_box"/>
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Nama Barang"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="16dp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#1a1a1a"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:background="@drawable/border_color_white__style_low"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Kondisi Barang"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_dark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Lokasi Barang"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_dark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Pengguna Barang"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_dark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Harga Pembelian"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#ffae00"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Lama Pemakaian"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_dark"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+                <LinearLayout
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Harga Saat Ini"
+                        android:textSize="14sp"
+                        android:textColor="#1a1a1a"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="..."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#ffae00"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e6e6e6"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/icons"
+    xmlns:geekui="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.app.britech.riung.activity.Help"
+    tools:showIn="@layout/help_activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:background="@color/icons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:gravity="center"
+                android:background="@drawable/ic_border_help"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/linearLayout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:padding="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/logo2"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:gravity="center|bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.app.britech.riung.Utility.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QRInvit."
+                            android:textSize="20dp"
+                            android:id="@+id/title_help"
+                            android:gravity="center"
+                            geekui:customTypeface="fonts/varela_round.ttf"/>
+                        <com.app.britech.riung.Utility.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="com"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            geekui:customTypeface="fonts/varela_round.ttf"/>
+
+                    </LinearLayout>
+                    <com.app.britech.riung.Utility.TypeFaceTextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/desc"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:id="@+id/content_help"
+                        geekui:customTypeface="fonts/varela_round.ttf"/>
+                </LinearLayout>
+
+                <com.app.britech.riung.Utility.TypeFaceTextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Kontak"
+                    android:textColor="#333333"
+                    android:textSize="20sp"
+                    geekui:customTypeface="fonts/varela_round.ttf" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/border_color_transparan_style"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/img_piepole"/>
+
+                    <com.app.britech.riung.Utility.TypeFaceTextView
+                        android:id="@+id/call_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="+6285393952736"
+                        android:textColor="#9DB1C2"
+                        android:textSize="16sp"
+                        geekui:customTypeface="fonts/varela_round.ttf"
+                        android:clickable="true"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/border_color_transparan_style"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/img_piepole"/>
+
+                    <com.app.britech.riung.Utility.TypeFaceTextView
+                        android:id="@+id/call_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="+6285257476232"
+                        android:textColor="#9DB1C2"
+                        android:textSize="16sp"
+                        geekui:customTypeface="fonts/varela_round.ttf"
+                        android:clickable="true"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
