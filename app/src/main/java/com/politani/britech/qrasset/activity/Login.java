@@ -21,11 +21,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 
+import com.app.britech.riung.R;
 import com.politani.britech.qrasset.config.Const;
 import com.politani.britech.qrasset.Utility.MessageDialogFragment;
 import com.politani.britech.qrasset.manager.PrefManager;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-import com.politani.britech.qrasset.R;
 import com.xwray.passwordview.PasswordView;
 
 import org.json.JSONException;
@@ -73,7 +73,8 @@ public class Login extends AppCompatActivity implements MessageDialogFragment.Me
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                startMainActivity();
+                //attemptLogin();
             }
         });
 

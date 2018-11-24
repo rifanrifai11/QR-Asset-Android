@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:geekui="http://schemas.android.com/apk/res-auto"
-    tools:context="com.app.britech.qrasset.activity.Help">
+    tools:context="com.politani.britech.qrasset.activity.Help">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -27,14 +27,13 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left">
 
-                <com.app.britech.qrasset.Utility.TypeFaceTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Informasi &amp; Kontak"
                     android:textColor="#FFFFFF"
-                    android:textSize="19sp"
-                    geekui:customTypeface="fonts/varela_round.ttf" />
+                    android:textSize="19sp" />
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>

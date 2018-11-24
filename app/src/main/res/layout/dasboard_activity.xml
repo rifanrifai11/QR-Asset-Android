@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/cordinatorLayout"
-    tools:context="com.app.britech.qrasset.activity.Dashboard">
+    tools:context=".activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -36,17 +36,18 @@
                     android:paddingBottom="10dp"
                     android:paddingRight="5dp"
                     android:paddingLeft="15dp">
+
                     <ImageView
                         android:layout_width="60dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/drawing"/>
+                        android:layout_height="37dp"
+                        android:src="@drawable/ic_qrassetputih" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Barcode Scan Apps"

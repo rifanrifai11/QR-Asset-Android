@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.app.britech.riung.R;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
 
 /**

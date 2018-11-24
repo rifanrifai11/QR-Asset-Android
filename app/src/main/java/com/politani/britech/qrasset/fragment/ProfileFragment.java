@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.app.britech.riung.R;
 import com.politani.britech.qrasset.Utility.SampleErrorListener;
 import com.politani.britech.qrasset.config.Const;
 import com.politani.britech.qrasset.manager.PrefManager;
@@ -32,7 +33,6 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.multi.SnackbarOnAnyDeniedMultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
 import com.squareup.picasso.Picasso;
 

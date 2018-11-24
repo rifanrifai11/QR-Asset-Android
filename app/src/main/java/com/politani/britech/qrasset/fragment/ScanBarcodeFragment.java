@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.app.britech.riung.R;
 import com.politani.britech.qrasset.Utility.SampleErrorListener;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
@@ -29,7 +30,6 @@ import com.karumi.dexter.listener.multi.CompositeMultiplePermissionsListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.multi.SnackbarOnAnyDeniedMultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.politani.britech.qrasset.R;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import retrofit2.Retrofit;

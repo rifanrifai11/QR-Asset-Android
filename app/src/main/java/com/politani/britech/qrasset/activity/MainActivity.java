@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.app.britech.riung.R;
 import com.politani.britech.qrasset.Utility.MessageDialogFragment;
 import com.politani.britech.qrasset.adapter.NavigationBottomViewPagerAdapter;
 import com.politani.britech.qrasset.manager.PrefManager;
@@ -21,7 +22,6 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
 import com.google.zxing.Result;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements MessageDialogFrag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         context=this;
         Context ctx = getApplicationContext();
         action();

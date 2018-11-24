@@ -40,8 +40,8 @@
 
                         <ImageView
                             android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/r_logo_white"/>
+                            android:layout_height="27dp"
+                            android:src="@drawable/ic_qrassetputih" />
 
                     </LinearLayout>
 
@@ -52,7 +52,7 @@
                         android:gravity="center"
                         android:layout_marginRight="48dp">
 
-                        <com.app.britech.riung.Utility.TypeFaceTextView
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Dashboard"

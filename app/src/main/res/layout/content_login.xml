@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:geekui="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.app.britech.qrasset.activity.Login"
+    tools:context=".activity.Login"
     android:background="#ffffff"
     android:orientation="vertical"
     tools:showIn="@layout/login_activity">
@@ -30,9 +30,9 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_margin="62dp"
-                    android:src="@drawable/r_logo_white"/>
+                    android:layout_height="104dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/ic_qrassetputih" />
             </LinearLayout>
 
             <LinearLayout
@@ -47,7 +47,7 @@
                     android:layout_marginTop="30dp"
                     android:orientation="vertical">
 
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:id="@+id/typeFaceTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -55,10 +55,9 @@
                         android:text="Authenticator"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold"
-                        android:textSize="24sp"
-                        geekui:customTypeface="fonts/varela_round.ttf" />
+                        android:textSize="24sp"/>
 
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:layout_marginTop="7dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -68,8 +67,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:textColor="@color/secondary_text"
-                        android:id="@+id/content_help"
-                        geekui:customTypeface="fonts/varela_round.ttf"/>
+                        android:id="@+id/content_help"/>
 
                 </LinearLayout>
 
@@ -99,7 +97,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <com.app.britech.qrasset.Utility.TypeFaceTextView
+                                <TextView
                                     android:textColor="@color/colorPrimary"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -156,7 +154,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <com.app.britech.qrasset.Utility.TypeFaceTextView
+                                <TextView
                                     android:textColor="@color/colorPrimary"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"

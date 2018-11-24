@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:id="@+id/cordinatorLayout"
     android:background="#f0f0f0"
-    tools:context="com.app.britech.qrasset.fragment.AsetTakingFragment">
+    tools:context="com.politani.britech.qrasset.fragment.AsetTakingFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

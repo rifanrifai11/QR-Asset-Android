@@ -8,9 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
-import com.politani.britech.qrasset.Utility.TypeFaceTextView;
-import com.politani.britech.qrasset.R;
+import com.app.britech.riung.R;
 
 
 public class Help extends AppCompatActivity {
@@ -39,8 +39,8 @@ public class Help extends AppCompatActivity {
     }
 
     public void initControl () {
-        TypeFaceTextView btn_call_1,btn_call_2;
-        btn_call_1 = (TypeFaceTextView) findViewById(R.id.call_1);
+        TextView btn_call_1,btn_call_2;
+        btn_call_1 = (TextView) findViewById(R.id.call_1);
         btn_call_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +50,7 @@ public class Help extends AppCompatActivity {
                 startActivity(surf);
             }
         });
-        btn_call_2 = (TypeFaceTextView) findViewById(R.id.call_2);
+        btn_call_2 = (TextView) findViewById(R.id.call_2);
         btn_call_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

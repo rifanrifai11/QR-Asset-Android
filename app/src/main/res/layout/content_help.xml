@@ -7,7 +7,7 @@
     android:background="@color/icons"
     xmlns:geekui="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.app.britech.qrasset.activity.Help"
+    tools:context=".activity.Help"
     tools:showIn="@layout/help_activity">
 
     <ScrollView
@@ -29,11 +29,12 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="200dp"
                         android:padding="30dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/logo2"/>
+                        android:src="@drawable/ic_qrassetputih" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -56,43 +57,39 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-                        <com.app.britech.qrasset.Utility.TypeFaceTextView
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="QRInvit."
+                            android:text="QRAsset."
                             android:textSize="20dp"
                             android:id="@+id/title_help"
-                            android:gravity="center"
-                            geekui:customTypeface="fonts/varela_round.ttf"/>
-                        <com.app.britech.qrasset.Utility.TypeFaceTextView
+                            android:gravity="center"/>
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="com"
                             android:textSize="15dp"
-                            android:gravity="center"
-                            geekui:customTypeface="fonts/varela_round.ttf"/>
+                            android:gravity="center"/>
 
                     </LinearLayout>
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/desc"
                         android:textSize="12dp"
                         android:gravity="center"
-                        android:id="@+id/content_help"
-                        geekui:customTypeface="fonts/varela_round.ttf"/>
+                        android:id="@+id/content_help"/>
                 </LinearLayout>
 
-                <com.app.britech.qrasset.Utility.TypeFaceTextView
+                <TextView
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Kontak"
                     android:textColor="#333333"
-                    android:textSize="20sp"
-                    geekui:customTypeface="fonts/varela_round.ttf" />
+                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:layout_marginTop="10dp"
@@ -108,7 +105,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/img_piepole"/>
 
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:id="@+id/call_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -117,7 +114,6 @@
                         android:text="+6285393952736"
                         android:textColor="#9DB1C2"
                         android:textSize="16sp"
-                        geekui:customTypeface="fonts/varela_round.ttf"
                         android:clickable="true"/>
 
 
@@ -137,7 +133,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/img_piepole"/>
 
-                    <com.app.britech.qrasset.Utility.TypeFaceTextView
+                    <TextView
                         android:id="@+id/call_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -146,7 +142,6 @@
                         android:text="+6285257476232"
                         android:textColor="#9DB1C2"
                         android:textSize="16sp"
-                        geekui:customTypeface="fonts/varela_round.ttf"
                         android:clickable="true"/>
 
 

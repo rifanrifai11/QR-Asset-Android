@@ -26,10 +26,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_marginTop="24dp"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:src="@drawable/r_logo"/>
+                    android:layout_height="103dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_qrassetbiru" />
 
                 <TextView
                     android:layout_width="wrap_content"

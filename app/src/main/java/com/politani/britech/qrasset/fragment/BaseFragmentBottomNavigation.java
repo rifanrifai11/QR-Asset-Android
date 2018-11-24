@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.app.britech.riung.R;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.politani.britech.qrasset.R;
 
 
 /**

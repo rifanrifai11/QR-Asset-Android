@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Riung Apps</string>
+    <string name="app_name">QR Asset</string>
     <string name="action_settings">Settings</string>
     <string name="num_code">8993242592421</string>
     <string name="url">http://barcode.britech.id/api/hadir</string>
-    <string name="title_activity_intro">QRInvit</string>
+    <string name="title_activity_intro">QRAsset</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_help">QRInvit</string>
+    <string name="title_activity_help">QRAsset</string>
     <string name="title_activity_login">Login</string>
-    <string name="desc">Merupakan aplikasi yang digunakan untuk scan barcode pengunjung terdaftar dalam Samarinda StartUp Festival 2017 yang diselanggaran oleh BI dan SaSCom.</string>
+    <string name="desc">Merupakan aplikasi yang digunakan untuk scan barcode untuk manajemen aset pada suatu instansi/perusahaan.</string>
     <string name="title_activity_test">Test</string>
 
     <string name="prompt_email">Email</string>

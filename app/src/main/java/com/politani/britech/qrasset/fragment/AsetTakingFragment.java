@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.app.britech.riung.R;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
 
 /**
