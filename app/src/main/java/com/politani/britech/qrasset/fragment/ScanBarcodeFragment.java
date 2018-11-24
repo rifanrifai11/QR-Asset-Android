@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.app.britech.riung.Utility.SampleErrorListener;
+import com.politani.britech.qrasset.Utility.SampleErrorListener;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.karumi.dexter.PermissionToken;

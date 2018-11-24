@@ -18,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-import com.app.britech.riung.config.Const;
+import com.politani.britech.qrasset.config.Const;
 import com.politani.britech.qrasset.R;
 import com.squareup.picasso.Picasso;
 

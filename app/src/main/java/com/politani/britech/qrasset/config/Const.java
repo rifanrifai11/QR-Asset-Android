@@ -1,4 +1,4 @@
-package com.app.britech.riung.config;
+package com.politani.britech.qrasset.config;
 
 /**
  * Created by Eko on 9/6/2017.

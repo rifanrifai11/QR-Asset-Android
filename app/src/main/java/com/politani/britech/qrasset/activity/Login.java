@@ -21,9 +21,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 
-import com.app.britech.riung.config.Const;
-import com.app.britech.riung.Utility.MessageDialogFragment;
-import com.app.britech.riung.manager.PrefManager;
+import com.politani.britech.qrasset.config.Const;
+import com.politani.britech.qrasset.Utility.MessageDialogFragment;
+import com.politani.britech.qrasset.manager.PrefManager;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.politani.britech.qrasset.R;
 import com.xwray.passwordview.PasswordView;

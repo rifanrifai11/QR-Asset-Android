@@ -13,9 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.app.britech.riung.Utility.MessageDialogFragment;
-import com.app.britech.riung.adapter.NavigationBottomViewPagerAdapter;
-import com.app.britech.riung.manager.PrefManager;
+import com.politani.britech.qrasset.Utility.MessageDialogFragment;
+import com.politani.britech.qrasset.adapter.NavigationBottomViewPagerAdapter;
+import com.politani.britech.qrasset.manager.PrefManager;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;

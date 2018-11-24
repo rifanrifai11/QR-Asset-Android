@@ -7,7 +7,7 @@
     android:background="@color/icons"
     xmlns:geekui="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.app.britech.riung.activity.Help"
+    tools:context="com.app.britech.qrasset.activity.Help"
     tools:showIn="@layout/help_activity">
 
     <ScrollView
@@ -56,7 +56,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-                        <com.app.britech.riung.Utility.TypeFaceTextView
+                        <com.app.britech.qrasset.Utility.TypeFaceTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="QRInvit."
@@ -64,7 +64,7 @@
                             android:id="@+id/title_help"
                             android:gravity="center"
                             geekui:customTypeface="fonts/varela_round.ttf"/>
-                        <com.app.britech.riung.Utility.TypeFaceTextView
+                        <com.app.britech.qrasset.Utility.TypeFaceTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="com"
@@ -73,7 +73,7 @@
                             geekui:customTypeface="fonts/varela_round.ttf"/>
 
                     </LinearLayout>
-                    <com.app.britech.riung.Utility.TypeFaceTextView
+                    <com.app.britech.qrasset.Utility.TypeFaceTextView
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                         geekui:customTypeface="fonts/varela_round.ttf"/>
                 </LinearLayout>
 
-                <com.app.britech.riung.Utility.TypeFaceTextView
+                <com.app.britech.qrasset.Utility.TypeFaceTextView
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/img_piepole"/>
 
-                    <com.app.britech.riung.Utility.TypeFaceTextView
+                    <com.app.britech.qrasset.Utility.TypeFaceTextView
                         android:id="@+id/call_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                         android:layout_height="20dp"
                         android:background="@drawable/img_piepole"/>
 
-                    <com.app.britech.riung.Utility.TypeFaceTextView
+                    <com.app.britech.qrasset.Utility.TypeFaceTextView
                         android:id="@+id/call_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

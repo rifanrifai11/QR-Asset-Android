@@ -19,9 +19,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.app.britech.riung.Utility.SampleErrorListener;
-import com.app.britech.riung.config.Const;
-import com.app.britech.riung.manager.PrefManager;
+import com.politani.britech.qrasset.Utility.SampleErrorListener;
+import com.politani.britech.qrasset.config.Const;
+import com.politani.britech.qrasset.manager.PrefManager;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.karumi.dexter.Dexter;

@@ -1,4 +1,4 @@
-package com.app.britech.riung.fragment;
+package com.politani.britech.qrasset.fragment;
 
 
 import android.content.Intent;
@@ -21,8 +21,8 @@ import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
  */
 public class AboutFragment extends BaseFragmentBottomNavigation {
 
-    LinearLayout visi,riung,develop;
-    TextView riungWeb,britechWeb;
+    LinearLayout visi,qrasset,develop;
+    TextView qrassetWeb,britechWeb;
 
 
     public AboutFragment() {
@@ -50,12 +50,12 @@ public class AboutFragment extends BaseFragmentBottomNavigation {
     public void initial(View v) {
 
         v.findViewById(R.id.expandVisi).setOnClickListener(mClickListener);
-        v.findViewById(R.id.expandRiung).setOnClickListener(mClickListener);
+        v.findViewById(R.id.expandqrasset).setOnClickListener(mClickListener);
         v.findViewById(R.id.expandWedDevelope).setOnClickListener(mClickListener);
         visi = v.findViewById(R.id.visi);
-        riung = v.findViewById(R.id.riung);
+        qrasset = v.findViewById(R.id.qrasset);
         develop = v.findViewById(R.id.develop);
-        v.findViewById(R.id.riungWeb).setOnClickListener(mClickListener);
+        v.findViewById(R.id.qrassetWeb).setOnClickListener(mClickListener);
         v.findViewById(R.id.britechWeb).setOnClickListener(mClickListener);
 
     }
@@ -74,14 +74,14 @@ public class AboutFragment extends BaseFragmentBottomNavigation {
                         visi.setVisibility(View.GONE);
                     }
                     break;
-                case R.id.expandRiung:
+                case R.id.expandqrasset:
                     if(v.getRotation() == 0) {
                         v.setRotation(360);
-                        riung.setVisibility(View.VISIBLE);
+                        qrasset.setVisibility(View.VISIBLE);
                     }
                     else{
                         v.setRotation(0);
-                        riung.setVisibility(View.GONE);
+                        qrasset.setVisibility(View.GONE);
                     }
                     break;
                 case R.id.expandWedDevelope:
@@ -94,7 +94,7 @@ public class AboutFragment extends BaseFragmentBottomNavigation {
                         develop.setVisibility(View.GONE);
                     }
                     break;
-                case R.id.riungWeb:
+                case R.id.qrassetWeb:
                     String uri = "http://www.riungmitra.co.id";
                     Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                     startActivity(intent2);

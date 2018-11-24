@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#f0f0f0"
     android:id="@+id/cordinatorLayout"
-    tools:context="com.app.britech.riung.fragment.AboutFragment">
+    tools:context="com.politani.britech.qrasset.fragment.AboutFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:layout_marginTop="16dp"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif"
-                    android:text="PT. RIUNG MITRA LESTARI"/>
+                    android:text="QR ASSET"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif"
-                    android:text="Mining Contractor"/>
+                    android:text="Inventory Managemet"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:id="@+id/expandRiung"
+                        android:id="@+id/expandqrasset"
                         android:clickable="true"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -153,7 +153,7 @@
                             android:layout_marginLeft="16dp"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="Website Riung"
+                            android:text="Website QR Asset"
                             android:textColor="#1a1a1a"/>
 
                         <ImageView
@@ -165,7 +165,7 @@
 
                     <LinearLayout
                         android:visibility="gone"
-                        android:id="@+id/riung"
+                        android:id="@+id/qrasset"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -174,11 +174,11 @@
 
                         <TextView
                             android:clickable="true"
-                            android:id="@+id/riungWeb"
+                            android:id="@+id/qrassetWeb"
                             android:layout_gravity="left"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="www.riungmitra.co.id"
+                            android:text="qrasset.co.id"
                             android:textColor="@color/colorPrimary"
                             android:textStyle="bold"
                             android:textSize="18sp"/>
