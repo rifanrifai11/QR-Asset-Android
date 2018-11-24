@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.app.britech.riung.Utility.TypeFaceTextView;
+import com.politani.britech.qrasset.Utility.TypeFaceTextView;
 import com.politani.britech.qrasset.R;
 
 
