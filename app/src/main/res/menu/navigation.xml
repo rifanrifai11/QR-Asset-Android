@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_cek_tagihan"
+        android:icon="@drawable/r_qr"
+
+        android:title="Scan Code" />
+
+    <item
+        android:id="@+id/navigation_layanan_peng3aduan"
+        android:icon="@drawable/r_profile_two"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/navigation_daftar_baru"
+        android:icon="@drawable/r_info"
+
+        android:title="About" />
+
+</menu>
