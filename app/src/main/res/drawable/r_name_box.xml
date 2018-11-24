@@ -1,0 +1,14 @@
+<vector android:height="24dp" android:viewportHeight="1707.0"
+    android:viewportWidth="1707.0" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#FECD06" android:pathData="M47,217h1626v269h-1626z"/>
+    <path android:fillColor="#FECD06" android:pathData="M1618,458l-1529,0c-15,0 -28,12 -28,28l0,1189c0,16 13,28 28,28l1529,0c16,0 29,-12 29,-28l0,-1189c0,-16 -13,-28 -29,-28zM1590,1647l-1472,0 0,-1133 1472,0 0,1133z"/>
+    <path android:fillColor="#FECD06" android:pathData="M1675,175l-1642,0c-16,0 -28,12 -28,28l0,283c0,16 12,28 28,28l1642,0c16,0 28,-12 28,-28l0,-283c0,-16 -12,-28 -28,-28zM1647,458l-1586,0 0,-227 1586,0 0,227z"/>
+    <path android:fillColor="#FECD06" android:pathData="M1690,179l-284,-170c-4,-3 -9,-4 -14,-4l-1076,0c-5,0 -10,1 -15,4l-283,170c-11,6 -16,19 -12,31 3,13 14,21 27,21l1642,0c13,0 24,-8 27,-21 4,-12 -2,-25 -12,-31zM135,175l189,-114 1060,0 189,114 -1438,0 0,0z"/>
+    <path android:fillColor="#000000" android:pathData="M1299,856l-579,0c-24,0 -44,20 -44,44 0,25 20,45 44,45l579,0c25,0 44,-20 44,-45 0,-24 -19,-44 -44,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M542,856l-133,0c-25,0 -45,20 -45,44 0,25 20,45 45,45l133,0c25,0 45,-20 45,-45 0,-24 -20,-44 -45,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M987,1034l-578,0c-25,0 -45,20 -45,44 0,25 20,45 45,45l578,0c25,0 45,-20 45,-45 0,-24 -20,-44 -45,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M1299,1034l-134,0c-24,0 -44,20 -44,44 0,25 20,45 44,45l134,0c25,0 44,-20 44,-45 0,-24 -19,-44 -44,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M1299,1212l-579,0c-24,0 -44,20 -44,44 0,25 20,45 44,45l579,0c25,0 44,-20 44,-45 0,-24 -19,-44 -44,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M542,1212l-133,0c-25,0 -45,20 -45,44 0,25 20,45 45,45l133,0c25,0 45,-20 45,-45 0,-24 -20,-44 -45,-44z"/>
+    <path android:fillColor="#000000" android:pathData="M1477,678l-1246,0c-25,0 -45,20 -45,44l0,712c0,25 20,45 45,45l1246,0c25,0 44,-20 44,-45l0,-712c0,-24 -19,-44 -44,-44zM1432,1390l-1157,0 0,-623 1157,0 0,623 0,0z"/>
+</vector>
