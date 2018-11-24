@@ -1,24 +1,17 @@
-package com.app.britech.riung.fragment;
+package com.politani.britech.qrasset.fragment;
 
 
-import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,46 +20,25 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.app.britech.riung.R;
 import com.app.britech.riung.Utility.SampleErrorListener;
-import com.app.britech.riung.activity.AsetTakingActivity;
-import com.app.britech.riung.activity.Login;
-import com.app.britech.riung.config.Const;
-import com.app.britech.riung.manager.PrefManager;
-import com.app.britech.riung.models.ResponseDataAset;
-import com.app.britech.riung.models.ResponseUser;
-import com.app.britech.riung.models.User;
-import com.app.britech.riung.service.ApiEndpointService;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.google.zxing.Result;
-import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.CompositeMultiplePermissionsListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.multi.SnackbarOnAnyDeniedMultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONObject;
-
-import java.text.NumberFormat;
-import java.util.Locale;
+import com.politani.britech.qrasset.R;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements ZXingScannerView.ResultHandler {
+public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
     public Retrofit retrofit;
     private ZXingScannerView mScannerView;
     private static final String FLASH_STATE = "FLASH_STATE";
@@ -102,23 +74,6 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_scan_barcode, container, false);
-
-        initializeRetrofit();
-
-        tvKodeBarang=view.findViewById(R.id.tvKodeBarang);
-        tvNamaBarang=view.findViewById(R.id.tvNamaBarang);
-        tvKondisiBarang=view.findViewById(R.id.tvKondisiBarang);
-        tvLokasiBarang=view.findViewById(R.id.tvLokasiBarang);
-        tvPenggunaBarang=view.findViewById(R.id.tvPenggunaBarang);
-        tvHargaBeli=view.findViewById(R.id.tvHargaBeli);
-        tvLamaPemakaian=view.findViewById(R.id.tvLamaPemakaian);
-        tvHargaSaatIni=view.findViewById(R.id.tvHargaSaatIni);
-        imageView=view.findViewById(R.id.foto);
-        mProgress =view.findViewById(R.id.progress);
-        snackBar = view.findViewById(R.id.cordinatorLayout);
-
-        bAsetTaking=view.findViewById(R.id.bAsetTaking);
-
         ViewGroup contentFrame = (ViewGroup) view.findViewById(R.id.content_framee);
         mScannerView = new ZXingScannerView(getContext());
         contentFrame.addView(mScannerView);
@@ -151,8 +106,7 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
                 if (mFlash = !mFlash) {
                     mScannerView.setFlash(mFlash);
                     floatingActionButton2.setImageResource(R.drawable.ic_flash_on_black_24dp);
-                }
-                else {
+                } else {
                     floatingActionButton2.setImageResource(R.drawable.ic_flash_off_black_24dp);
                     mScannerView.setFlash(mFlash);
                 }
@@ -161,69 +115,9 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
             }
         });
 
-        bAsetTaking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(tvKodeBarang.getText().equals("...")){
-                    new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Belum Ada User Scan")
-                            .setContentText("Scan Barcode Terlebih Dahulu")
-                            .setConfirmText("Tutup")
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    //getListUser();
-                                    sDialog.dismissWithAnimation();
-                                }
-                            })
-                            .show();
-                }else{
-                    Intent intent = new Intent(getActivity(), AsetTakingActivity.class);
-                    intent.putExtra("kode_barang", tvKodeBarang.getText());
-                    intent.putExtra("nama_barang", tvNamaBarang.getText());
-                    intent.putExtra("kondisi_barang", tvKondisiBarang.getText());
-                    intent.putExtra("lokasi_barang", tvLokasiBarang.getText());
-                    intent.putExtra("pengguna_barang", tvPenggunaBarang.getText());
-                    intent.putExtra("harga_beli", tvHargaBeli.getText());
-                    intent.putExtra("lama_pemakaian", tvLamaPemakaian.getText());
-                    intent.putExtra("harga_saat_ini", tvHargaSaatIni.getText());
-                    if(foto!=null){
-                        intent.putExtra("foto", foto);
-                    }
-
-                    startActivity(intent);
-                }
-
-
-            }
-        });
-
-        new Thread(() -> {
-            int currentAPIVersion = Build.VERSION.SDK_INT;
-            if (currentAPIVersion >= Build.VERSION_CODES.M) {
-                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                    Dexter.withActivity(getActivity())
-                            .withPermissions(
-                                    Manifest.permission.CAMERA,
-                                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                    Manifest.permission.READ_EXTERNAL_STORAGE)
-                            .withListener(allPermissionsListener)
-                            .withErrorListener(errorListener)
-                            .check();
-                }
-            }
-        }).start();
-        createPermissionListeners();
-        cekAksesUser();
         return view;
     }
 
-    private void initializeRetrofit(){
-        retrofit = new Retrofit.Builder()
-                .baseUrl(Const.BASE_API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -235,7 +129,6 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
     @Override
     public void onResume() {
         super.onResume();
-        mScannerView.setResultHandler(this);
         mScannerView.startCamera();
         mScannerView.setFlash(mFlash);
         mScannerView.setAutoFocus(mAutoFocus);
@@ -246,266 +139,6 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
         super.onPause();
         mScannerView.stopCamera();
 //        closeMessageDialog();
-    }
-
-    @Override
-    public void handleResult(Result rawResult) {
-        try {
-            //showMessageDialog(rawResult.getText());
-            showProgress(true);
-            PrefManager prf = new PrefManager(getContext());
-
-            ApiEndpointService apiService = retrofit.create(ApiEndpointService.class);
-            Call<ResponseDataAset> result = apiService.getDataAset("Bearer "+prf.getString("token"),rawResult.getText());
-            result.enqueue(new Callback<ResponseDataAset>() {
-                @Override
-                public void onResponse(Call<ResponseDataAset> call, Response<ResponseDataAset> response) {
-                    showProgress(false);
-                    if(response.isSuccessful() ){
-                        if(response.body().getSuccess()){
-                            if(response.body().getDataAset()!=null) {
-                                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                                Ringtone r = RingtoneManager.getRingtone(getContext(), notification);
-                                r.play();
-                                tvKodeBarang.setText(response.body().getDataAset().getKodeDataAset());
-                                tvNamaBarang.setText(response.body().getDataAset().getGrubAsets().getNama());
-
-                                if(response.body().getDataAset().getLatestAsetTakings().size()>0){
-                                    tvKondisiBarang.setText(response.body().getDataAset().getLatestAsetTakings().get(0).getKondisiAset().getNama());
-                                }else{
-                                    tvKondisiBarang.setText("...");
-                                }
-
-                                tvLokasiBarang.setText(response.body().getDataAset().getLokasi());
-
-                                if(response.body().getDataAset().getAsetBasts().size()>0){
-                                    tvPenggunaBarang.setText(response.body().getDataAset().getAsetBasts().get(0).getNama());
-                                }else{
-                                    tvPenggunaBarang.setText("...");
-                                }
-
-                                tvHargaBeli.setText("Rp. "+NumberFormat.getNumberInstance(Locale.US).format(response.body().getDataAset().getAsetPembelian().get(0).getHargaBarang()));
-                                tvLamaPemakaian.setText(response.body().getDataAset().getMasaPakaiBulan()+" Bulan / " +response.body().getDataAset().getMasaPakaiTahun()+" Tahun");
-                                tvHargaSaatIni.setText("Rp. "+NumberFormat.getNumberInstance(Locale.US).format(response.body().getDataAset().getHargaSekarangBulan()));
-
-                                if(response.body().getDataAset().getFoto1()!=null){
-                                    Picasso.with(getContext())
-                                            .load(Const.BASE_URL +"storage/"+response.body().getDataAset().getFoto1()).fit()
-                                            .placeholder(R.drawable.default_no_image)
-                                            .error(R.drawable.default_no_image)
-                                            .into(imageView);
-                                    foto=response.body().getDataAset().getFoto1();
-                                }else{
-                                    foto=null;
-                                    imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.default_no_image));
-                                }
-
-                                new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Data Ditemukan")
-                                        .setContentText("Data Aset Ditemukan")
-                                        .setConfirmText("Tutup")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                //getListUser();
-                                                mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                                sDialog.dismissWithAnimation();
-                                            }
-                                        })
-                                        .show();
-
-                            }
-                            else {
-//                                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-//                                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-//                                r.play();
-                                new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("Barcode Tidak Ditemukan")
-                                        .setContentText("Barcode Anda Tidak Terdaftar")
-                                        .setConfirmText("Tutup")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                //getListUser();
-                                                mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                                sDialog.dismissWithAnimation();
-                                            }
-                                        })
-                                        .show();
-                            }
-                        }else{
-//                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-//                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-//                            r.play();
-                            new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                    .setTitleText("Aplikasi Bermasalah")
-                                    .setContentText(response.body().getMessage())
-                                    .setConfirmText("Tutup")
-                                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                        @Override
-                                        public void onClick(SweetAlertDialog sDialog) {
-                                            //getListUser();
-                                            mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                            sDialog.dismissWithAnimation();
-                                        }
-                                    })
-                                    .show();
-                        }
-                    }else{
-                        try {
-                            JSONObject jObjError = new JSONObject(response.errorBody().string());
-
-                            if(jObjError.has("error") && jObjError.getString("error").equalsIgnoreCase("token_expired")){
-                                new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("Aplikasi Bermasalah")
-                                        .setContentText("Login anda telah kadaluarsa. Silahkan Login ulang")
-                                        .setConfirmText("Login Ulang")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                PrefManager prf= new PrefManager(getContext());
-                                                prf.remove("token");
-                                                Intent intent= new Intent(getActivity(),Login.class);
-                                                startActivity(intent);
-                                                getActivity().finish();
-                                                sDialog.dismissWithAnimation();
-                                            }
-                                        })
-                                        .show();
-                            }else if(jObjError.has("message")){
-                                new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("Gagal")
-                                        .setContentText(jObjError.getString("message"))
-                                        .setConfirmText("Tutup")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                                sDialog.dismissWithAnimation();
-                                            }
-                                        })
-                                        .show();
-                            }else{
-                                new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("Aplikasi Bermasalah")
-                                        .setContentText("Nomor Sambungan tidak ditemukan atau Respon server bermasalah")
-                                        .setConfirmText("Tutup")
-                                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sDialog) {
-                                                //getAccessToken();
-                                                mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                                sDialog.dismissWithAnimation();
-                                            }
-                                        })
-                                        .show();
-                            }
-                        } catch (Exception e) {
-                            new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                                    .setTitleText("Pesan Aplikasi")
-                                    .setContentText("Tidak ada tagihan untuk nomor ini")
-                                    .setConfirmText("Cari Ulang")
-                                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                        @Override
-                                        public void onClick(SweetAlertDialog sDialog) {
-                                            mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                                            sDialog.dismissWithAnimation();
-                                        }
-                                    })
-                                    .show();
-                        }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ResponseDataAset> call, Throwable t) {
-                    showProgress(false);
-                    new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Aplikasi Bermasalah")
-                            .setContentText("Error "+t.getMessage())
-                            .setConfirmText("Tutup")
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    //getListUser();
-                                    sDialog.dismissWithAnimation();
-                                }
-                            })
-                            .show();
-                }
-            });
-
-
-        } catch (Exception e) {
-            showProgress(false);
-            new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Aplikasi Bermasalah")
-                    .setContentText("Error "+e.getMessage())
-                    .setConfirmText("Tutup")
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-                            //getListUser();
-                            mScannerView.resumeCameraPreview(ScanBarcodeFragment.this::handleResult);
-                            sDialog.dismissWithAnimation();
-                        }
-                    })
-                    .show();
-        }
-
-    }
-    @Override
-    public void onValueSelected(Entry e, Highlight h) {
-
-    }
-
-    @Override
-    public void onNothingSelected() {
-
-    }
-
-    //Cek Akses Aset Taking
-    private void cekAksesUser() {
-        try {
-            PrefManager prf = new PrefManager(getContext());
-
-            ApiEndpointService apiService = retrofit.create(ApiEndpointService.class);
-            Call<ResponseUser> result = apiService.getUser("Bearer "+prf.getString("token"));
-            result.enqueue(new Callback<ResponseUser>() {
-                @Override
-                public void onResponse(Call<ResponseUser> call, Response<ResponseUser> response) {
-                    if(response.isSuccessful()){
-                        if (response.body().getSuccess()) {
-                            User user=response.body().getUser();
-                            bAsetTaking.setVisibility(View.GONE);
-                            //Cek Role
-                            for (int i = 0; i < user.getRoles().size(); i++) {
-                                if(user.getRoles().get(i).getName().equals("admin_aset_taking")){
-                                    bAsetTaking.setVisibility(View.VISIBLE);
-                                    break;
-                                }else{
-
-                                    continue;
-                                }
-                            }
-
-
-                        } else {
-                        }
-                    }else{
-
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ResponseUser> call, Throwable t) {
-                }
-            });
-
-
-        } catch (Exception e) {
-        }
-
     }
 
     private void createPermissionListeners() {
@@ -569,5 +202,15 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements
             mProgress.setVisibility(show ? View.VISIBLE : View.GONE);
             mProgress.setVisibility(show ? View.GONE : View.VISIBLE);
         }
+    }
+
+    @Override
+    public void onValueSelected(Entry e, Highlight h) {
+
+    }
+
+    @Override
+    public void onNothingSelected() {
+
     }
 }

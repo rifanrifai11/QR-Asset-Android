@@ -1,4 +1,4 @@
-package com.app.britech.riung.Utility;
+package com.politani.britech.qrasset.Utility;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

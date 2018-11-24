@@ -1,4 +1,4 @@
-package com.app.britech.riung.activity;
+package com.politani.britech.qrasset.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,13 +21,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 
-import com.app.britech.riung.R;
 import com.app.britech.riung.config.Const;
 import com.app.britech.riung.Utility.MessageDialogFragment;
 import com.app.britech.riung.manager.PrefManager;
-import com.app.britech.riung.models.ResponseToken;
-import com.app.britech.riung.service.ApiEndpointService;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+import com.politani.britech.qrasset.R;
 import com.xwray.passwordview.PasswordView;
 
 import org.json.JSONException;
@@ -93,120 +91,6 @@ public class Login extends AppCompatActivity implements MessageDialogFragment.Me
                 .build();
     }
 
-    public void getAccessToken(String email,String password){
-        try {
-            ApiEndpointService apiService = retrofit.create(ApiEndpointService.class);
-            Call<ResponseToken> result = apiService.getAccessToken(email,password);
-            result.enqueue(new Callback<ResponseToken>() {
-                @Override
-                public void onResponse(Call<ResponseToken> call, Response<ResponseToken> response) {
-                    showProgress(false);
-                    if(response.isSuccessful()){
-                        if(response.body().getSuccess()){
-
-                            PrefManager prf= new PrefManager(getApplicationContext());
-                            prf.setString("token",response.body().getData().getToken());
-
-                            //Untuk firebase token
-                            /*ApiEndpointService apiService = retrofit.create(ApiEndpointService.class);
-                            Call<ResponseUser> result = apiService.setTokenDevice("Bearer "+prf.getString("token"),FirebaseInstanceId.getInstance().getToken());
-                            result.enqueue(new Callback<ResponseUser>() {
-                                @Override
-                                public void onResponse(Call<ResponseUser> call, Response<ResponseUser> response) {
-                                    if(response.isSuccessful()){
-                                        Log.v("AFTER LOGIN","Hassan : "+response.body().getMessage());
-                                    }
-                                }
-
-                                @Override
-                                public void onFailure(Call<ResponseUser> call, Throwable t) {
-                                    *//*Snackbar snackbar = Snackbar
-                                            .make(relativeLayout, "No internet connection!", Snackbar.LENGTH_INDEFINITE)
-                                            .setAction("RETRY", new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    getComment();
-                                                }
-                                            });
-                                    snackbar.setActionTextColor(Color.RED);
-                                    View sbView = snackbar.getView();
-                                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                                    textView.setTextColor(Color.YELLOW);
-                                    snackbar.show();*//*
-                                }
-                            });*/
-
-                            startMainActivity();
-                        }else{
-                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                            r.play();
-                            //showMessageDialog(response.body().getMessage());
-                        }
-                    }else{
-                        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                        r.play();
-                        try {
-                            JSONObject jObjError = new JSONObject(response.errorBody().string());
-
-                            new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-                                    .setTitleText("Login gagal")
-                                    .setContentText(jObjError.getString("message"))
-                                    .setConfirmText("Tutup")
-                                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                        @Override
-                                        public void onClick(SweetAlertDialog sDialog) {
-                                            //getAccessToken();
-                                            sDialog.dismissWithAnimation();
-                                        }
-                                    })
-                                    .show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ResponseToken> call, Throwable t) {
-                    showProgress(false);
-                    new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Aplikasi Bermasalah")
-                            .setContentText("Koneksi / Jaringan Internet Bermasalah")
-                            .setConfirmText("Tutup")
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    //getAccessToken();
-                                    sDialog.dismissWithAnimation();
-                                }
-                            })
-                            .show();
-                }
-
-
-            });
-
-
-        } catch (Exception e) {
-            showProgress(false);
-            new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Aplikasi Bermasalah")
-                    .setContentText("Koneksi / Jaringan Internet Bermasalah")
-                    .setConfirmText("Tutup")
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-                            //getListUser();
-                            sDialog.dismissWithAnimation();
-                        }
-                    })
-                    .show();
-        }
-    }
 
     private void startMainActivity() {
         Intent intent= new Intent(Login.this,MainActivity.class);
@@ -253,7 +137,6 @@ public class Login extends AppCompatActivity implements MessageDialogFragment.Me
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            getAccessToken(email,password);
         }
     }
 

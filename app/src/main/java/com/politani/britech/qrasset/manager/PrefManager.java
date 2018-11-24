@@ -1,4 +1,4 @@
-package com.app.britech.riung.manager;
+package com.politani.britech.qrasset.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;

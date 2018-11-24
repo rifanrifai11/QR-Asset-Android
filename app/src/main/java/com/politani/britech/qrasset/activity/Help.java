@@ -1,4 +1,4 @@
-package com.app.britech.riung.activity;
+package com.politani.britech.qrasset.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.app.britech.riung.R;
 import com.app.britech.riung.Utility.TypeFaceTextView;
+import com.politani.britech.qrasset.R;
 
 
 public class Help extends AppCompatActivity {

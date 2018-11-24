@@ -1,4 +1,4 @@
-package com.app.britech.riung.adapter;
+package com.politani.britech.qrasset.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
 import com.app.britech.riung.fragment.AboutFragment;
-import com.app.britech.riung.fragment.BaseFragmentBottomNavigation;
-import com.app.britech.riung.fragment.ProfileFragment;
-import com.app.britech.riung.fragment.ScanBarcodeFragment;
+import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
+import com.politani.britech.qrasset.fragment.ProfileFragment;
+import com.politani.britech.qrasset.fragment.ScanBarcodeFragment;
 
 import java.util.ArrayList;
 

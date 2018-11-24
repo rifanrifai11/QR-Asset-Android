@@ -1,4 +1,4 @@
-package com.app.britech.riung.message;
+package com.politani.britech.qrasset.message;
 
 import android.content.Context;
 import android.view.LayoutInflater;

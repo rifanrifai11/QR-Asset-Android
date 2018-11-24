@@ -1,4 +1,4 @@
-package com.app.britech.riung.activity;
+package com.politani.britech.qrasset.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,16 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.app.britech.riung.R;
 import com.app.britech.riung.Utility.MessageDialogFragment;
 import com.app.britech.riung.adapter.NavigationBottomViewPagerAdapter;
-import com.app.britech.riung.fragment.BaseFragmentBottomNavigation;
 import com.app.britech.riung.manager.PrefManager;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
 import com.google.zxing.Result;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+import com.politani.britech.qrasset.R;
+import com.politani.britech.qrasset.fragment.BaseFragmentBottomNavigation;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
