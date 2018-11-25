@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.zxing.Result;
 import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.Utility.SampleErrorListener;
 import com.github.mikephil.charting.data.Entry;
@@ -38,7 +41,7 @@ import retrofit2.Retrofit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
+public class ScanBarcodeFragment extends BaseFragmentBottomNavigation implements ZXingScannerView.ResultHandler {
     public Retrofit retrofit;
     private ZXingScannerView mScannerView;
     private static final String FLASH_STATE = "FLASH_STATE";
@@ -68,7 +71,6 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
         fragment.setArguments(b);
         return fragment;
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -77,6 +79,21 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
         ViewGroup contentFrame = (ViewGroup) view.findViewById(R.id.content_framee);
         mScannerView = new ZXingScannerView(getContext());
         contentFrame.addView(mScannerView);
+
+        tvKodeBarang=view.findViewById(R.id.tvKodeBarang);
+        tvNamaBarang=view.findViewById(R.id.tvNamaBarang);
+        tvKondisiBarang=view.findViewById(R.id.tvKondisiBarang);
+        tvLokasiBarang=view.findViewById(R.id.tvLokasiBarang);
+        tvPenggunaBarang=view.findViewById(R.id.tvPenggunaBarang);
+        tvHargaBeli=view.findViewById(R.id.tvHargaBeli);
+        tvLamaPemakaian=view.findViewById(R.id.tvLamaPemakaian);
+        tvHargaSaatIni=view.findViewById(R.id.tvHargaSaatIni);
+        imageView=view.findViewById(R.id.foto);
+        mProgress =view.findViewById(R.id.progress);
+        snackBar = view.findViewById(R.id.cordinatorLayout);
+
+        bAsetTaking=view.findViewById(R.id.bAsetTaking);
+
 
         final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) view.findViewById(R.id.cordinatorLayout);
         floatingActionButton1 = (FloatingActionButton) view.findViewById(R.id.focus_fab);
@@ -117,6 +134,19 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
 
         return view;
     }
+
+    public void data() {
+        tvKodeBarang.setText("EMB/ME/MH/003");
+        tvNamaBarang.setText("MESIN ABSENSI");
+        tvKondisiBarang.setText("Baik");
+        tvLokasiBarang.setText("OFFICE CARPENTER");
+        tvPenggunaBarang.setText("Ahmad Prayoga");
+        tvHargaBeli.setText("2,185,000");
+        tvLamaPemakaian.setText("06-10-2018 -> 01-11-2018");
+        tvHargaSaatIni.setText("1,800,000");
+        imageView.setImageResource(R.drawable.mesin);
+    }
+
 
 
     @Override
@@ -212,5 +242,30 @@ public class ScanBarcodeFragment extends BaseFragmentBottomNavigation {
     @Override
     public void onNothingSelected() {
 
+    }
+
+    @Override
+    public void handleResult(Result result) {
+
+        try {
+            if(result.getText().equals("EMB/ME/MH/003")) {
+                data();
+            } else {
+                Toast.makeText(getContext(),"Data Tidak Ada", Toast.LENGTH_SHORT).show();
+            }
+
+        }catch (Exception e) {
+
+        }
+
+//        Toast.makeText(getActivity(), "Contents = " + result.getText() +
+//                ", Format = " + result.getBarcodeFormat().toString(), Toast.LENGTH_SHORT).show();
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mScannerView.resumeCameraPreview(ScanBarcodeFragment.this);
+//            }
+//        }, 2000);
     }
 }

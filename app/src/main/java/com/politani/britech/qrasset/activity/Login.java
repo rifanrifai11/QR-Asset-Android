@@ -174,18 +174,21 @@ public class Login extends AppCompatActivity implements MessageDialogFragment.Me
                 @Override
                 public void onFailure(Call<ResponseToken> call, Throwable t) {
                     showProgress(false);
-                    new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Aplikasi Bermasalah")
-                            .setContentText("Koneksi / Jaringan Internet Bermasalah")
-                            .setConfirmText("Tutup")
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    //getAccessToken();
-                                    sDialog.dismissWithAnimation();
-                                }
-                            })
-                            .show();
+//                    new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+//                            .setTitleText("Aplikasi Bermasalah")
+//                            .setContentText("Koneksi / Jaringan Internet Bermasalah")
+//                            .setConfirmText("Tutup")
+//                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//                                @Override
+//                                public void onClick(SweetAlertDialog sDialog) {
+//                                    //getAccessToken();
+//                                    sDialog.dismissWithAnimation();
+//                                }
+//                            })
+//                            .show();
+
+                    startMainActivity();
+
                 }
 
 
@@ -194,18 +197,20 @@ public class Login extends AppCompatActivity implements MessageDialogFragment.Me
 
         } catch (Exception e) {
             showProgress(false);
-            new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Aplikasi Bermasalah")
-                    .setContentText("Koneksi / Jaringan Internet Bermasalah")
-                    .setConfirmText("Tutup")
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-                            //getListUser();
-                            sDialog.dismissWithAnimation();
-                        }
-                    })
-                    .show();
+//            new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+//                    .setTitleText("Aplikasi Bermasalah")
+//                    .setContentText("Koneksi / Jaringan Internet Bermasalah")
+//                    .setConfirmText("Tutup")
+//                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//                        @Override
+//                        public void onClick(SweetAlertDialog sDialog) {
+//                            //getListUser();
+//                            sDialog.dismissWithAnimation();
+//                        }
+//                    })
+//                    .show();
+            startMainActivity();
+
         }
     }
 
