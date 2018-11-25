@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.app.britech.riung.R;
+import com.politani.britech.qrasset.R;
 
 
 public class Help extends AppCompatActivity {

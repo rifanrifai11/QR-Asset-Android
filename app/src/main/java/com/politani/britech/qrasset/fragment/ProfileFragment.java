@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.app.britech.riung.R;
+import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.Utility.SampleErrorListener;
 import com.politani.britech.qrasset.config.Const;
 import com.politani.britech.qrasset.manager.PrefManager;

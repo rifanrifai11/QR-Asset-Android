@@ -17,8 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
-import com.app.britech.riung.R;
+import com.politani.britech.qrasset.R;
 import com.politani.britech.qrasset.config.Const;
 import com.squareup.picasso.Picasso;
 

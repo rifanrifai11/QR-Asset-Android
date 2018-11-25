@@ -5,7 +5,7 @@ package com.politani.britech.qrasset.config;
  */
 
 public class Const {
-    public static final String BASE_API_URL ="http://aset.britech.id/api/";
-    public static final String BASE_URL ="http://aset.britech.id/";
+    public static final String BASE_API_URL ="http://hackthon8.politanisamarinda.ac.id/api/";
+    public static final String BASE_URL ="http://hackthon8.politanisamarinda.ac.id/";
     public static final String TAG_FRAGMENT="Fragment_PDAM";
 }
